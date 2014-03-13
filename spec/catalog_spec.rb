@@ -34,7 +34,7 @@ describe Catalog do
     test_catalog = Catalog.new({:artist => "Coolio"},{:album => "Koolio"})
     test_catalog = Catalog.new({:artist => "Coolio"},{:album => "James Bond"})
     test_catalog = Catalog.new({:artist => "Foolio"},{:album => "James Bond"})
-    test_catalog.list_all
+    Catalog.list_all
     Catalog.all_cds.length.should eq 2
     end
   end
@@ -44,8 +44,7 @@ describe Catalog do
     test_catalog = Catalog.new({:artist => "Coolio"},{:album => "Koolio"})
     test_catalog = Catalog.new({:artist => "Coolio"},{:album => "James Bond"})
     test_catalog = Catalog.new({:artist => "Foolio"},{:album => "James Bond"})
-    test_catalog.search_for_album("Foolio")
-    test_catalog.search_for_album("Foolio").should eq "James Bond"
+    Catalog.search_for_album("Foolio").should eq "James Bond"
     end
   end
 
@@ -53,8 +52,8 @@ describe Catalog do
     it 'Will search the cd catalog for an artist' do
     test_catalog = Catalog.new({:artist => "Coolio"},{:album => "I'm Coolio"})
     test_catalog = Catalog.new({:artist => "Coolio"},{:album => "James Bond"})
-    test_catalog.search_for_artist("I'm Coolio").should eq "Coolio"
-    test_catalog.search_for_artist("James Bond").should eq "Coolio"
+    Catalog.search_for_artist("I'm Coolio").should eq "Coolio"
+    Catalog.search_for_artist("James Bond").should eq "Coolio"
     end
   end
 
